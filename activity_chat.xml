@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="?attr/colorOnPrimary"
+            app:subtitleTextColor="?attr/colorOnPrimary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Connection Status Bar -->
+        <View
+            android:id="@+id/connectionStatusBar"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/status_disconnected" />
+
+        <TextView
+            android:id="@+id/tvConnectionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connecting..."
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textColor="@color/status_connecting"
+            android:padding="4dp"
+            android:background="?attr/colorSurfaceVariant" />
+
+        <!-- File Transfer Progress Bar -->
+        <LinearLayout
+            android:id="@+id/layoutFileProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:background="?attr/colorSurfaceVariant"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvFileProgressName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Transferring file..."
+                    android:textSize="12sp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <TextView
+                    android:id="@+id/tvFileProgressPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorPrimary" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressFileTransfer"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="4dp"
+                android:max="100"
+                android:progress="0" />
+
+        </LinearLayout>
+
+        <!-- Messages RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMessages"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:scrollbars="vertical" />
+
+        <!-- Input Area -->
+        <LinearLayout
+            android:id="@+id/layoutInputArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:background="?attr/colorSurface"
+            android:elevation="4dp">
+
+            <ImageButton
+                android:id="@+id/btnAttachment"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_attach"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Attach file"
+                android:tint="?attr/colorPrimary" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="8dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusTopStart="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Message"
+                    android:maxLines="4"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:imeOptions="actionSend" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Voice Button (shown when no text) -->
+            <ImageButton
+                android:id="@+id/btnVoice"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_mic"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Record voice"
+                android:tint="?attr/colorPrimary" />
+
+            <!-- Send Button (shown when text exists) -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                android:src="@drawable/ic_send"
+                android:contentDescription="Send"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- Voice Recording Hint -->
+        <TextView
+            android:id="@+id/tvVoiceRecordingHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔴 Recording... Release to send, slide left to cancel"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="12sp"
+            android:padding="6dp"
+            android:background="?attr/colorSurfaceVariant"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

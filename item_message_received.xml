@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="start"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="2dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="48dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="1dp"
+            app:shapeAppearanceOverlay="@style/ChatBubbleReceivedShape">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:maxWidth="260dp">
+
+                <!-- Text Message -->
+                <TextView
+                    android:id="@+id/tvMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="15sp"
+                    android:lineSpacingExtra="2dp"
+                    android:visibility="gone" />
+
+                <!-- Image Message -->
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:contentDescription="Received image" />
+
+                <!-- File Message -->
+                <LinearLayout
+                    android:id="@+id/layoutFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_file"
+                        android:tint="?attr/colorOnSurfaceVariant"
+                        android:contentDescription="File" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:id="@+id/tvFileName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textSize="13sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:maxWidth="160dp" />
+
+                        <TextView
+                            android:id="@+id/tvFileSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:alpha="0.7"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Voice Message -->
+                <LinearLayout
+                    android:id="@+id/layoutVoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:minWidth="160dp"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/btnVoicePlay"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_play"
+                        android:background="@android:color/transparent"
+                        android:tint="?attr/colorOnSurfaceVariant"
+                        android:contentDescription="Play voice" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.5" />
+
+                    <TextView
+                        android:id="@+id/tvVoiceDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="12sp"
+                        android:text="0s" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textSize="10sp"
+            android:textColor="?attr/colorOnSurface"
+            android:alpha="0.5"
+            android:layout_marginTop="2dp"
+            android:paddingStart="4dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

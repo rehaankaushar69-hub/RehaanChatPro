@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 Color Scheme — Blue -->
+    <color name="md_theme_primary">#1565C0</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryContainer">#D6E4FF</color>
+    <color name="md_theme_onPrimaryContainer">#001849</color>
+    <color name="md_theme_secondary">#575E71</color>
+    <color name="md_theme_onSecondary">#FFFFFF</color>
+    <color name="md_theme_secondaryContainer">#DBE2F9</color>
+    <color name="md_theme_onSecondaryContainer">#141B2C</color>
+    <color name="md_theme_tertiary">#715573</color>
+    <color name="md_theme_onTertiary">#FFFFFF</color>
+    <color name="md_theme_tertiaryContainer">#FBD7FC</color>
+    <color name="md_theme_onTertiaryContainer">#29132D</color>
+    <color name="md_theme_error">#BA1A1A</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+    <color name="md_theme_errorContainer">#FFDAD6</color>
+    <color name="md_theme_onErrorContainer">#410002</color>
+    <color name="md_theme_surface">#FAFCFF</color>
+    <color name="md_theme_onSurface">#1A1C20</color>
+    <color name="md_theme_surfaceVariant">#E1E2EC</color>
+    <color name="md_theme_onSurfaceVariant">#44474F</color>
+    <color name="md_theme_outline">#75777F</color>
+    <color name="md_theme_background">#FAFCFF</color>
+    <color name="md_theme_onBackground">#1A1C20</color>
+
+    <!-- Status Colors -->
+    <color name="status_connected">#2E7D32</color>
+    <color name="status_connecting">#F57C00</color>
+    <color name="status_disconnected">#C62828</color>
+
+    <!-- Misc -->
+    <color name="red">#C62828</color>
+    <color name="avatar_bg">#1565C0</color>
+</resources>

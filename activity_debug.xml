@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="?attr/colorOnPrimary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="?attr/colorSurfaceVariant">
+
+        <TextView
+            android:id="@+id/tvDeviceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device Name: —"
+            android:textSize="13sp"
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvDeviceAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device Address: —"
+            android:textSize="13sp"
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvBluetoothState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth State: —"
+            android:textSize="13sp"
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvBluetoothSupported"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Supported: —"
+            android:textSize="13sp"
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvConnectionState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connection State: —"
+            android:textSize="13sp"
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvConnectedDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connected Device: None"
+            android:textSize="13sp"
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="monospace" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Refresh"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearLogs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Clear Logs"
+            android:layout_marginStart="4dp"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONNECTION LOGS"
+        android:textSize="11sp"
+        android:textColor="?attr/colorPrimary"
+        android:letterSpacing="0.1"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp" />
+
+    <ScrollView
+        android:id="@+id/scrollLogs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="2dp" />
+
+    </ScrollView>
+
+</LinearLayout>

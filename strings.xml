@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BlueChat</string>
+    <string name="action_scan">Find Devices</string>
+    <string name="action_debug">Debug Panel</string>
+    <string name="action_disconnect">Disconnect</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_listen">Listen for Connections</string>
+    <string name="connecting">Connecting…</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="bluetooth_not_supported">Bluetooth not supported on this device</string>
+    <string name="bluetooth_required">Bluetooth is required for BlueChat</string>
+    <string name="permission_required">Permission required to use Bluetooth</string>
+    <string name="send_message_hint">Message</string>
+    <string name="no_chats">No chats yet.\nTap the + button to find nearby devices.</string>
+    <string name="notification_channel_description">BlueChat is running in background</string>
+    <string name="voice_recording">Recording… Release to send</string>
+    <string name="file_too_large">File too large. Maximum size is 25 MB.</string>
+</resources>
